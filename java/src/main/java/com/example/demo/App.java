@@ -8,8 +8,8 @@ import java.io.FileReader;
 import java.util.Arrays;
 import java.util.LinkedList;
 import java.util.List;
-
 import com.example.demo.commands.CommandRegistry;
+import  com.example.demo.configurations.*;
 
 public class App {
 
@@ -23,7 +23,8 @@ public class App {
 
     public static void run(List<String> commandLineArgs){
 
-        Configuration conf = Configuration.getInstance();
+    //    Configuration conf = Configuration.getInstance();
+        Configuration conf = new Configuration();
 
         CommandRegistry commandRegistry = conf.getCommandRegistry();
         

@@ -47,9 +47,12 @@ public class AppTest{
         Path expectedOutputFile = Paths.get("src","test","resources","test_input_one_expected_output.txt");
         // Act
 
+        // App.run(arguments);
         String actualOutput = tapSystemOut(() -> App.run(arguments));
         Files.writeString(actualOutputFile, actualOutput, StandardCharsets.UTF_8);
         
+        // System.err.println(actualOutput);
+        //  System.err.println(expectedOutputFile.toString());
         // Assert
         Assertions.assertTrue(compareByMemoryMappedFiles(expectedOutputFile,actualOutputFile));
     }

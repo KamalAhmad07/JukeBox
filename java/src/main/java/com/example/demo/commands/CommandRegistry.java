@@ -28,12 +28,13 @@ public class CommandRegistry {
 
     public void invokeCommand(String input) {
         List<String> tokens = parse(input);
+
         ICommand command = get(tokens.get(0));
         if(command == null){
             // Handle Exception
             throw new RuntimeException("INVALID COMMAND 🛑");
         } 
-        command.invoke(tokens);
+        command.execute(tokens);
         return;
     }
 }
